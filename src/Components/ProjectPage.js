@@ -60,6 +60,12 @@ const ProjectPage = () => {
 
                 <button onClick={() => {navigate("/")}} class="proj_btn">Return Home</button>
             </section>
+            <section class="projects">
+
+            </section>
+            <section class="projects">
+                
+            </section>
         </div>
     )
 }
