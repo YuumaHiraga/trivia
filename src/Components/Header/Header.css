@@ -1,0 +1,44 @@
+.logo {
+    height: 2em;
+    background-color: var(--clr-tile);
+}
+
+.head {
+    background-color: var(--clr-tile);
+}
+
+.nav {
+    background-color: var(--clr-tile);
+}
+
+.nav__list {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: right;
+    width: 300px;
+}
+
+@media (max-width: 800px) {
+    .nav__list {
+        width: 270px;
+        align-items: right;
+    }
+}
+
+
+.nav__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav__link:hover {
+    opacity: 80%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
