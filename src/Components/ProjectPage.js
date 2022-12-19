@@ -72,6 +72,13 @@ const ProjectPage = () => {
         
     }
 
+    const restartGame = () => {
+         setScore(0);
+         setResult(false);
+         setCurrentQuestion(0);
+
+    }
+
     {triv.map((data) => {
         
         questions.push(data.question)
@@ -118,7 +125,7 @@ const ProjectPage = () => {
                 {result ? (
                     <div className="final-results">
                     <h1>Percent Correct: {percentage}</h1>
-                    <button onClick={() => {navigate("/")}} class="mc_btn">Next Question</button>
+                    <button onClick={() => restartGame()} class="purple_btn">Restart Game</button>
                     </div>
                 ) : (
                     <div className = "questionCard">
@@ -139,7 +146,7 @@ const ProjectPage = () => {
                         <input type="radio"  name="radio" value={answers[currentQuestion*4+3]}></input>
                         <span class="checkmark"></span>
                         </label>
-                        <button onClick={() => clicked()} class="mc_btn">Check Answer</button>
+                        <button onClick={() => clicked()} class="purple_btn">Check Answer</button>
                     </div>
                 )}
 

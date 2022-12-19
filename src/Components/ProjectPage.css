@@ -26,11 +26,11 @@
     height: 4em;
     background-color: var(--clr-light);
     color: #696969;
-    border: none;
+    border: 5px solid white;
     margin-bottom: 50px;
 }
 
-.mc_btn {
+.purple_btn {
     padding: 20px;
     width: 100px;
     background-color: #9B59B6;
@@ -40,6 +40,7 @@
     color: rgb(252, 252, 252);
     cursor: pointer;
     font-weight: 800;
+    float: right;
 }
 
 .button {
@@ -64,11 +65,13 @@
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 30px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    border: 5px solid white;
+    border-radius: 20px;
   }
   
   /* Hide the browser's default radio button */
