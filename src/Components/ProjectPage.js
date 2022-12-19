@@ -4,7 +4,6 @@ import {useState, useEffect } from 'react';
 
 //Components
 import Header from './Header';
-
 import './ProjectPage.css';
 
 
@@ -18,6 +17,10 @@ const ProjectPage = () => {
     useEffect(() => {
         trivs()
     }, [])
+
+    // let limit = window.parent.document.getElementById("limit").value;
+
+    // console.log("limit: " + limit);
 
     const trivs = async () => {
         const response = await fetch("https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=5")
@@ -72,13 +75,6 @@ const ProjectPage = () => {
         
     }
 
-    const restartGame = () => {
-         setScore(0);
-         setResult(false);
-         setCurrentQuestion(0);
-
-    }
-
     {triv.map((data) => {
         
         questions.push(data.question)
@@ -125,7 +121,7 @@ const ProjectPage = () => {
                 {result ? (
                     <div className="final-results">
                     <h1>Percent Correct: {percentage}</h1>
-                    <button onClick={() => restartGame()} class="purple_btn">Restart Game</button>
+                    <button onClick={() => window.location.reload()} class="purple_btn">Restart Game</button>
                     </div>
                 ) : (
                     <div className = "questionCard">

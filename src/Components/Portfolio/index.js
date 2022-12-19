@@ -15,7 +15,7 @@ const Portfolio = () => {
         <body id="portfolio" class="port__tile">
             <h1 class="port__title">Portfolio</h1>
 
-            <button onClick={() => {navigate("/projects")}} class="port__btn">START</button>
+            
         </body>
     )
 }

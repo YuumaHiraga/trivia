@@ -1,8 +1,10 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom';
 
 import "./Experiences.css";
 
 const Experiences = () => {
+    let navigate = useNavigate();
     return (
         <body id="portfolio" class="port__tile">
             <h3 class="exp__title">Settings</h3>
@@ -11,26 +13,26 @@ const Experiences = () => {
             <div class="exp__tile2">
                 <div class="exp__list">
                 <div class="select-box">
-                    <label for="city"><b>Categories: </b></label>
+                    <label for="cat"><b>Categories: </b></label>
                     <br/>
-                    <select name="city" id="city">
-                        <option value="New Orleans">All</option>
-                        <option value="Philadelphia">Arts and Literture</option>
-                        <option value="Tuscon">Film and TV</option>
-                        <option value="Tampa">Food and Drink</option>
-                        <option value="Nashville">General Knowledge</option>
-                        <option value="New Orleans">Geography</option>
-                        <option value="Saint Louis">History</option>
-                        <option value="Santa Barbara">Music</option>
-                        <option value="New Orleans">Science</option>
-                        <option value="Saint Louis">Society and Culture</option>
-                        <option value="Santa Barbara">Sports and Leisure</option>
+                    <select name="cat" id="cat">
+                        <option value="All">All</option>
+                        <option value="Arts and Literture">Arts and Literture</option>
+                        <option value="Film and TV">Film and TV</option>
+                        <option value="Food and Drink">Food and Drink</option>
+                        <option value="General Knowledge">General Knowledge</option>
+                        <option value="Geography">Geography</option>
+                        <option value="History">History</option>
+                        <option value="Music">Music</option>
+                        <option value="Science">Science</option>
+                        <option value="Society and Culture">Society and Culture</option>
+                        <option value="Sports and Leisure">Sports and Leisure</option>
                     </select>
                 </div>
                 <div class="select-box">
-                    <label for="city"><b>Difficulty: </b></label>
+                    <label for="diff"><b>Difficulty: </b></label>
                     <br/>
-                    <select name="city" id="city">
+                    <select name="diff" id="diff">
                         <option value="Philadelphia">Any</option>
                         <option value="Tuscon">Easy</option>
                         <option value="Tampa">Medium</option>
@@ -39,9 +41,9 @@ const Experiences = () => {
                 </div>
                 <br></br>
                 <div class="select-box">
-                    <label for="city"><b>Number of Questions: </b></label>
+                    <label for="limit"><b>Number of Questions: </b></label>
                     <br/>
-                    <input type="range" min="1" max="20" value="10"></input>
+                    <input name="limit" id="limit" type="range" min="1" max="20" value="10"></input>
                 </div>
                 <div class="select-box">
                     <label for="city"><b>Tags: </b></label>
@@ -71,6 +73,7 @@ const Experiences = () => {
                 </div>
                 </div>
             </div>
+            <button onClick={() => {navigate("/projects")}} class="port__btn">START</button>
         </body>
     )
 }
