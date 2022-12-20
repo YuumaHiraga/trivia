@@ -12,6 +12,7 @@ const Contacts = () => {
                 <body>Phone#: &nbsp; &nbsp; 904-806-9431</body>
                 <body>Email: &nbsp; &nbsp; &nbsp; &nbsp; Matthewjung14@gmail.com</body>
                 <body>LinkedIn: &nbsp; &nbsp;linkedin.com/in/matthewyjung</body>
+                <body>The Trivia API: https://the-trivia-api.com/</body>
             </section>
         </body>
     )
