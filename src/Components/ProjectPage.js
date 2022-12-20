@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {useState, useEffect } from 'react';
 
 //Components
@@ -9,41 +9,41 @@ import './ProjectPage.css';
 
 const ProjectPage = () => {
 
+    //Setting useStates
     const [result, setResult] = useState(false);
     const [score, setScore] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(0);
-
     const [triv, setTriv] = useState([]);
     useEffect(() => {
         trivs()
     }, [])
 
-    // let limit = window.parent.document.getElementById("limit").value;
+    //Setting categories
+    const location = useLocation();
+    console.log("location category: " + location.state.category + ", limit: " + location.state.limit +
+    ", difficulty: " + location.state.difficulty);
 
-    // console.log("limit: " + limit);
+    let URL = "https://the-trivia-api.com/api/questions?" + "&limit=" + location.state.limit;
+    
+    if (location.state.category != "Any"){
+        URL = URL + "&categories=" + location.state.category
+    }
+    if (location.state.difficulty != "Any"){
+        URL = URL + "&difficulty=" + location.state.difficulty;
+    }
 
     const trivs = async () => {
-        const response = await fetch("https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=5")
+        const response = await fetch(URL)
 
         setTriv(await response.json())
     }
     let navigate = useNavigate();
 
-    let place = (Math.floor(Math.random() * 1)); 
-    var answers = [
-        // {
-        //      prompt:"text",
-        //      options: [
-        //         {id: 0, text:"placeholder", isCorrect:false},
-        //         {id: 1, text:"placeholder", isCorrect:false},
-        //         {id: 2, text:"placeholder", isCorrect:false},
-        //         {id: 3, text:"placeholder", isCorrect:true}
-        //      ],
-        // }
-    ];
-
+    let place = (Math.floor(Math.random() * 4)); 
+    var answers = []
     var questions = []
     var correct = []
+    var diffArray = []
     
     let count = 0;
     let percentage = score/(currentQuestion)
@@ -76,7 +76,7 @@ const ProjectPage = () => {
     }
 
     {triv.map((data) => {
-        
+        diffArray.push(data.difficulty)
         questions.push(data.question)
         correct.push(data.correctAnswer)
 
@@ -106,8 +106,13 @@ const ProjectPage = () => {
                 answers.push(data.correctAnswer)
                 break;
         }
+        count++;
 
     })}
+    let lim = location.state.limit
+    if (count < lim){
+        lim = count
+    }
 
     console.log(place);
 
@@ -115,8 +120,8 @@ const ProjectPage = () => {
         <div>
             <Header/>
             <section class="projects">
-            <h2>Number Correct: {score}</h2>
-            <h2>Current Question out of: {currentQuestion}</h2>
+            <h2>Questions Correct: {score}</h2>
+            <h2>Difficulty: {diffArray[currentQuestion]}</h2>
 
                 {result ? (
                     <div className="final-results">
@@ -125,7 +130,8 @@ const ProjectPage = () => {
                     </div>
                 ) : (
                     <div className = "questionCard">
-                        <p className = "list-group-item" key ={count}>{questions[currentQuestion]}</p>
+                        <h2>Question #{currentQuestion+1} out of: {lim}</h2>
+                        <h2 className = "list-group-item" key ={count}>{questions[currentQuestion]}</h2>
                         <label class="container">{answers[currentQuestion*4]}
                         <input type="radio" name="radio" value={answers[currentQuestion*4]}></input>
                         <span class="checkmark"></span>

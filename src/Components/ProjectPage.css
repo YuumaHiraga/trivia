@@ -21,6 +21,13 @@
     background-color: var(--clr-tile);
 }
 
+.questionCard {
+    background-color: var(--clr-light);
+    border: 5px solid var(--clr-dark);
+    border-radius: 20px;
+    color: black;
+}
+
 .proj_btn {
     width: 10em;
     height: 4em;
@@ -33,7 +40,7 @@
 .purple_btn {
     padding: 20px;
     width: 100px;
-    background-color: #9B59B6;
+    background-color: #22A7F0;
     border: 5px solid rgba(0,0,0,.3);
     font-family: "Montserrat", sans-serif;
     border-radius: 5px;
@@ -70,8 +77,14 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    border: 5px solid white;
+    color: black;
+    border: 5px solid black;
     border-radius: 20px;
+    background-color: #D3D3D3;
+  }
+
+  .container:hover {
+    opacity: 80%;
   }
   
   /* Hide the browser's default radio button */
@@ -94,12 +107,12 @@
   
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: #ADD8E6 ;
   }
   
   /* When the radio button is checked, add a blue background */
   .container input:checked ~ .checkmark {
-    background-color: #9B59B6;
+    background-color: #22A7F0 ;
   }
   
   /* Create the indicator (the dot/circle - hidden when not checked) */

@@ -4,6 +4,15 @@ import {useNavigate} from 'react-router-dom';
 import "./Experiences.css";
 
 const Experiences = () => {
+
+    const toComponentB=()=>{
+        let cat = document.getElementById("cat").value;
+        let lim = document.getElementById("limit").value;
+        let diff = document.getElementById("diff").value;
+        
+        navigate('/projects',{state:{limit:lim,category:cat,difficulty:diff}});
+    }
+
     let navigate = useNavigate();
     return (
         <body id="portfolio" class="port__tile">
@@ -17,63 +26,43 @@ const Experiences = () => {
                     <br/>
                     <select name="cat" id="cat">
                         <option value="All">All</option>
-                        <option value="Arts and Literture">Arts and Literture</option>
-                        <option value="Film and TV">Film and TV</option>
-                        <option value="Food and Drink">Food and Drink</option>
-                        <option value="General Knowledge">General Knowledge</option>
-                        <option value="Geography">Geography</option>
-                        <option value="History">History</option>
-                        <option value="Music">Music</option>
-                        <option value="Science">Science</option>
-                        <option value="Society and Culture">Society and Culture</option>
-                        <option value="Sports and Leisure">Sports and Leisure</option>
+                        <option value="general_knowledge">General Knowledge</option>
+                        <option value="society_and_culture">Society & Culture</option>
+                        <option value="film_and_tv">Film & TV</option>
+                        <option value="arts_and_literature">Arts & Literature</option>
+                        <option value="history">History</option>
+                        <option value="geography">Geography</option>
+                        <option value="food_and_drink">Food & Drink</option>
+                        <option value="science">Science</option>
+                        <option value="music">Music</option>
+                        <option value="sport_and_leisure">Sports & Leisure</option>
                     </select>
+                </div>
+                <br></br>
+                <div class="select-box">
+                    <div class="slidecontainer">
+                    <label for="limit"><b>Number of Questions: (Max 20)</b></label>
+                    <br/>
+                    <input name="limit" class="slider" id="limit" type="range" min="1" max="20"></input>
+                    </div>
                 </div>
                 <div class="select-box">
                     <label for="diff"><b>Difficulty: </b></label>
                     <br/>
                     <select name="diff" id="diff">
-                        <option value="Philadelphia">Any</option>
-                        <option value="Tuscon">Easy</option>
-                        <option value="Tampa">Medium</option>
-                        <option value="Nashville">Hard</option>
-                    </select>
-                </div>
-                <br></br>
-                <div class="select-box">
-                    <label for="limit"><b>Number of Questions: </b></label>
-                    <br/>
-                    <input name="limit" id="limit" type="range" min="1" max="20" value="10"></input>
-                </div>
-                <div class="select-box">
-                    <label for="city"><b>Tags: </b></label>
-                    <br/>
-                    <select name="city" id="city">
-                        <option value="Philadelphia">University of Pennsylvania</option>
-                        <option value="Tuscon">University of Arizona</option>
-                        <option value="Tampa">University of Tampa</option>
-                        <option value="Nashville">Vanderbilt University</option>
-                        <option value="New Orleans">Tulane University</option>
-                        <option value="Saint Louis">Washington University in St. Louis</option>
-                        <option value="Santa Barbara">University of Calfornia Santa Barbara</option>
-                    </select>
-                </div>
-                <div class="select-box">
-                    <label for="city"><b>Question Region: </b></label>
-                    <br/>
-                    <select name="city" id="city">
-                        <option value="Philadelphia">University of Pennsylvania</option>
-                        <option value="Tuscon">University of Arizona</option>
-                        <option value="Tampa">University of Tampa</option>
-                        <option value="Nashville">Vanderbilt University</option>
-                        <option value="New Orleans">Tulane University</option>
-                        <option value="Saint Louis">Washington University in St. Louis</option>
-                        <option value="Santa Barbara">University of Calfornia Santa Barbara</option>
+                        <option value="Any">Any</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
                     </select>
                 </div>
                 </div>
             </div>
-            <button onClick={() => {navigate("/projects")}} class="port__btn">START</button>
+            <>
+                <body id="portfolio" class="port__tile">
+                <button onClick={() => {toComponentB()}} class="port__btn">START</button>
+                </body>
+            </>
         </body>
     )
 }

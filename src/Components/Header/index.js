@@ -13,6 +13,9 @@ const Header = () => {
         <body>
             <header class="head">
                 <nav class="nav">
+                {/* <button onClick={() => {navigate("/")}} class="port__btn"><a href="#home" class="nav__link">Home</a></button>
+                <button onClick={() => {navigate("/")}} class="port__btn"><a href="#portfolio" class="nav__link">Settings</a></button>
+                <button onClick={() => {navigate("/")}} class="port__btn"><a href="#contacts" class="nav__link">Contact</a></button> */}
                     <u1 class="nav__list">
                         <l1 class="nav__item" onClick={() => {navigate("/")}}><a href="#home" class="nav__link">Home</a></l1>
                         <l1 class="nav__item" onClick={() => {navigate("/")}}><a href="#portfolio" class="nav__link">Settings</a></l1>

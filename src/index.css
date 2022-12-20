@@ -11,9 +11,9 @@ html {
 
 :root {
   --clr-light: rgb(252, 252, 252);
-  --clr-dark: rgb(252, 252, 252);
+  --clr-dark: rgb(0,0,0);
   --clr-accent: #ce4646;
-  --clr-main: #1c1c1c;
+  --clr-main: rgb(0,0,0);
   --clr-accent: #7dc242;
   --clr-tile: 	#696969;
 
@@ -35,7 +35,7 @@ html {
 /* General styles */
 
 body {
-  color: var(--clr-dark);
+  color: var(--clr-light);
   margin: 0;
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
