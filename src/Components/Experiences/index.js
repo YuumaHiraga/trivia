@@ -25,7 +25,6 @@ const Experiences = () => {
                     <label for="cat"><b>Categories: </b></label>
                     <br/>
                     <select name="cat" id="cat">
-                        <option value="All">All</option>
                         <option value="general_knowledge">General Knowledge</option>
                         <option value="society_and_culture">Society & Culture</option>
                         <option value="film_and_tv">Film & TV</option>

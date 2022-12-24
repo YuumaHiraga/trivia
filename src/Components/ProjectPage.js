@@ -52,7 +52,10 @@ const ProjectPage = () => {
     const clicked = ()=> {
         if (reveal == false){
             var chosen = document.getElementsByName("radio");
-            document.querySelector('#check').textContent="Next Question";
+            //document.querySelector('#check').textContent="Next Question";
+            document.getElementById('check').disabled = true;
+            document.getElementById('next').disabled = false;
+
             console.log("actual: " + correct[currentQuestion])
             let wrong = '.container'
             let right = '.container'
@@ -76,8 +79,14 @@ const ProjectPage = () => {
             }
             setReveal(true)
         } else {
-            document.querySelector('#check').textContent="Check Answer";
-            setReveal(false)
+            //document.querySelector('#check').textContent="Check Answer";
+            document.getElementById('check').disabled = false;
+            document.getElementById('next').disabled = true;
+            setReveal(false);
+            let radios = document.getElementsByTagName('input');
+            for(let i = 0; i < radios.length; i++) {
+                 radios[i].checked = false;
+              }
 
             if (currentQuestion+1 < questions.length){
                 setCurrentQuestion(currentQuestion+1)
@@ -172,7 +181,8 @@ const ProjectPage = () => {
                         <input type="radio"  name="radio" id = "3" value={answers[currentQuestion*4+3]}></input>
                         <span class="checkmark"></span>
                         </label>
-                        <button type="button"  onClick={() => clicked()} id = "check" class="purple_btn" value= "Check Answer">Check Answer</button>
+                        <button type="button"  onClick={() => clicked()} id = "check" class="check_btn" value="Check Answer">Check Answer</button>
+                        <button type="button"  onClick={() => clicked()} id = "next" class="purple_btn" value="Next Question">Next Question</button>
                     </div>
                 )}
 

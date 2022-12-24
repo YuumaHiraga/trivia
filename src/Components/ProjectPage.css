@@ -47,9 +47,19 @@
   margin-top: 50px;
 }
 
+.purple_btn:disabled {
+  opacity: 0.0;
+  cursor: not-allowed;
+}
+
+.check_btn:disabled {
+  opacity: 0.0;
+  cursor: not-allowed;
+}
+
 .purple_btn {
     padding: 20px;
-    width: 100px;
+    width: 120px;
     background-color: #22A7F0;
     border: 5px solid rgba(0,0,0,.3);
     font-family: "Montserrat", sans-serif;
@@ -58,6 +68,29 @@
     cursor: pointer;
     font-weight: 800;
     float: right;
+    font-size: 15px;
+    text-align: center; 
+}
+
+.check_btn:hover {
+  opacity: 70%;
+}
+
+.check_btn {
+  padding: 20px;
+  width: 100px;
+  background-color: #22A7F0;
+  border: 5px solid rgba(0,0,0,.3);
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  color: rgb(252, 252, 252);
+  cursor: pointer;
+  font-weight: 800;
+  float: left;
+  font-size: 15px;
+  text-align: center; 
+  left: 50%;
+  
 }
 
 .blue_btn:hover {
@@ -75,7 +108,7 @@
   cursor: pointer;
   font-weight: 800;
   margin-left: 80px;
-  left: 30%;
+  left: 50%;
 }
 
 .purple_btn:hover {
